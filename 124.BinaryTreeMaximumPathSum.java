@@ -17,6 +17,3 @@ class Solution {
         return Math.max(left,right) + nodeValue;
     }
 }
-
-
-//其他解法
