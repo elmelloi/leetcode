@@ -30,5 +30,3 @@ class Solution {
         res.add(node.val);
     }
 }
-
-
