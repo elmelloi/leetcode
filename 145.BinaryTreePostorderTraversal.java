@@ -1,32 +1,48 @@
 /**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
+ * Definition for a binary tree node. public class TreeNode { int val; TreeNode
+ * left; TreeNode right; TreeNode() {} TreeNode(int val) { this.val = val; }
+ * TreeNode(int val, TreeNode left, TreeNode right) { this.val = val; this.left
+ * = left; this.right = right; } }
  */
 
 // 解法一：递归
 class Solution {
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
-        postorder(root,res);
+        postorder(root, res);
         return res;
     }
 
-    public void postorder(TreeNode node,List<Integer> res){
-        if(node == null) return ;
+    public void postorder(TreeNode node, List<Integer> res) {
+        if (node == null)
+            return;
 
-        postorder(node.left,res);
-        postorder(node.right,res);
+        postorder(node.left, res);
+        postorder(node.right, res);
         res.add(node.val);
+    }
+}
+
+// 解法二：迭代
+// 没做完
+
+class Solution {
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList();
+
+        if (root != null)
+            return res;
+
+        Deque<TreeNode> stack = new LinkedList();
+        TreeNode node = root;
+
+        while (!stack.isEmpty() || node != null) {
+            while (node != null) {
+                stack.push(node);
+                node = node.left;
+            }
+
+        }
+
     }
 }
